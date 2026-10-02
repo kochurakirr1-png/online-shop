@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechShop — Интернет-магазин электроники</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__inner">
+        <a href="#" class="logo">
+            <span class="logo__icon">⚡</span>
+            <span class="logo__text">TechShop</span>
+        </a>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li><a href="#catalog" class="nav__link active">Каталог</a></li>
+                <li><a href="#services" class="nav__link">Услуги</a></li>
+                <li><a href="#contacts" class="nav__link">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__actions">
+            <button class="icon-btn" id="searchBtn" title="Поиск">🔍</button>
+            <button class="icon-btn" id="cartBtn" title="Корзина">
+                🛒 <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="icon-btn" title="Профиль">👤</button>
+        </div>
+
+        <button class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <div class="search-bar" id="searchBar">
+        <div class="container">
+            <input type="text" id="searchInput" placeholder="Поиск товаров...">
+            <button id="searchClose">✕</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="container hero__inner">
+        <span class="hero__badge">🔥 Новинки 2026 уже в продаже</span>
+        <h1 class="hero__title">Технологии <span class="hero__accent">нового поколения</span></h1>
+        <p class="hero__subtitle">Скидки до 40% на смартфоны, ноутбуки и гаджеты</p>
+        <div class="hero__buttons">
+            <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+            <a href="#services" class="btn btn--ghost">Наши услуги</a>
+        </div>
+    </div>
+</section>
+
+<section class="catalog" id="catalog">
+    <div class="container">
+        <h2 class="section-title">Популярные товары</h2>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-category="all">Все</button>
+            <button class="filter-btn" data-category="phone">Смартфоны</button>
+            <button class="filter-btn" data-category="laptop">Ноутбуки</button>
+            <button class="filter-btn" data-category="audio">Аудио</button>
+            <button class="filter-btn" data-category="gadget">Гаджеты</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+
+            <article class="product-card" data-category="phone" data-name="Смартфон Galaxy X20" data-price="59990">
+                <div class="product-card__image">
+                    <img src="https://via.placeholder.com/300x250/4a90e2/ffffff?text=Смартфон" alt="Смартфон">
+                    <span class="product-card__badge">-20%</span>
+                </div>
+                <div class="product-card__body">
+                    <h3 class="product-card__title">Смартфон Galaxy X20</h3>
+                    <p class="product-card__desc">6.7", 256 ГБ, 8 ГБ ОЗУ</p>
+                    <div class="product-card__price">
+                        <span class="price-new">59 990 ₽</span>
+                        <span class="price-old">74 990 ₽</span>
+                    </div>
+                    <button class="btn btn--cart" data-id="1">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="laptop" data-name="Ноутбук ProBook 15" data-price="89990">
+                <div class="product-card__image">
+                    <img src="https://via.placeholder.com/300x250/50c878/ffffff?text=Ноутбук" alt="Ноутбук">
+                </div>
+                <div class="product-card__body">
+                    <h3 class="product-card__title">Ноутбук ProBook 15</h3>
+                    <p class="product-card__desc">Intel i7, 16 ГБ, SSD 512 ГБ</p>
+                    <div class="product-card__price">
+                        <span class="price-new">89 990 ₽</span>
+                    </div>
+                    <button class="btn btn--cart" data-id="2">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="audio" data-name="Наушники AirSound Pro" data-price="14990">
+                <div class="product-card__image">
+                    <img src="https://via.placeholder.com/300x250/e74c3c/ffffff?text=Наушники" alt="Наушники">
+                    <span class="product-card__badge">NEW</span>
+                </div>
+                <div class="product-card__body">
+                    <h3 class="product-card__title">Наушники AirSound Pro</h3>
+                    <p class="product-card__desc">Беспроводные, шумоподавление</p>
+                    <div class="product-card__price">
+                        <span class="price-new">14 990 ₽</span>
+                    </div>
+                    <button class="btn btn--cart" data-id="3">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="gadget" data-name="Умные часы SmartFit" data-price="19990">
+                <div class="product-card__image">
+                    <img src="https://via.placeholder.com/300x250/f39c12/ffffff?text=Часы" alt="Часы">
+                </div>
+                <div class="product-card__body">
+                    <h3 class="product-card__title">Умные часы SmartFit</h3>
+                    <p class="product-card__desc">AMOLED, GPS, 7 дней работы</p>
+                    <div class="product-card__price">
+                        <span class="price-new">19 990 ₽</span>
+                    </div>
+                    <button class="btn btn--cart" data-id="4">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="gadget" data-name="Планшет TabPad 11" data-price="34990">
+                <div class="product-card__image">
+                    <img src="https://via.placeholder.com/300x250/9b59b6/ffffff?text=Планшет" alt="Планшет">
+                </div>
+                <div class="product-card__body">
+                    <h3 class="product-card__title">Планшет TabPad 11</h3>
+                    <p class="product-card__desc">11", 128 ГБ, Wi-Fi + LTE</p>
+                    <div class="product-card__price">
+                        <span class="price-new">34 990 ₽</span>
+                    </div>
+                    <button class="btn btn--cart" data-id="5">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="audio" data-name="Умная колонка SoundBox" data-price="7990">
+                <div class="product-card__image">
+                    <img src="https://via.placeholder.com/300x250/1abc9c/ffffff?text=Колонка" alt="Колонка">
+                </div>
+                <div class="product-card__body">
+                    <h3 class="product-card__title">Умная колонка SoundBox</h3>
+                    <p class="product-card__desc">Голосовой помощник, 30 Вт</p>
+                    <div class="product-card__price">
+                        <span class="price-new">7 990 ₽</span>
+                    </div>
+                    <button class="btn btn--cart" data-id="6">В корзину</button>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="empty-message" id="emptyMessage">Ничего не найдено 😔</p>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-card__icon">🚚</div>
+                <h3>Быстрая доставка</h3>
+                <p>Доставка по всей России от 1 дня. Бесплатно при заказе от 5000 ₽.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon">🛠️</div>
+                <h3>Гарантия и сервис</h3>
+                <p>Официальная гарантия до 3 лет и собственный сервисный центр.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon">💳</div>
+                <h3>Рассрочка 0%</h3>
+                <p>Оформление рассрочки до 24 месяцев без переплат и справок.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon">↩️</div>
+                <h3>Возврат 30 дней</h3>
+                <p>Не подошёл товар? Вернём деньги в течение 30 дней без вопросов.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" id="contacts">
+    <div class="container footer__inner">
+        <div class="footer__col">
+            <h4 class="footer__title">TechShop</h4>
+            <p>Интернет-магазин электроники №1 в России. Более 50 000 товаров в наличии.</p>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__title">Каталог</h4>
+            <ul class="footer__list">
+                <li><a href="#">Смартфоны</a></li>
+                <li><a href="#">Ноутбуки</a></li>
+                <li><a href="#">Наушники</a></li>
+                <li><a href="#">Умные часы</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__title">Покупателям</h4>
+            <ul class="footer__list">
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Возврат</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__title">Контакты</h4>
+            <ul class="footer__list">
+                <li>📞 8 (800) 555-35-35</li>
+                <li>✉️ info@techshop.ru</li>
+                <li>📍 Москва, ул. Ленина, 10</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container">
+            <p>© 2025 TechShop. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-panel__header">
+        <h3>Корзина</h3>
+        <button id="cartClose">✕</button>
+    </div>
+    <div class="cart-panel__body" id="cartBody"></div>
+    <div class="cart-panel__footer">
+        <div class="cart-total">
+            <span>Итого:</span>
+            <span id="cartTotal">0 ₽</span>
+        </div>
+        <button class="btn btn--primary" id="checkoutBtn">Оформить заказ</button>
+    </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="modal" id="orderModal">
+    <div class="modal__content">
+        <h3>Заказ оформлен 🎉</h3>
+        <p>Спасибо за покупку! Менеджер свяжется с вами в течение 15 минут.</p>
+        <button class="btn btn--primary" id="modalClose">Ок</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
